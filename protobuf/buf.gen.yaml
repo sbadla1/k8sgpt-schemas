@@ -1,4 +1,6 @@
 version: v1
+managed:
+  enabled: true
 plugins:
   - plugin: buf.build/protocolbuffers/go
     out: ./proto/go-server
