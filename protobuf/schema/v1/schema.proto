@@ -1,5 +1,8 @@
 syntax = "proto3";
 
+// well know type by google, gRPC gateway uses HTTP annotation.
+import "google/api/annotations.proto";
+
 package schema.v1;
 
 option go_package = "schema/service/v1";

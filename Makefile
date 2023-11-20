@@ -16,6 +16,6 @@ gen-go: install-buf guard-GOPATH
 	${GOPATH}/bin/buf generate --template protobuf/buf.gen.go.yaml
 
 gen-go-server: install-buf guard-GOPATH
-	${GOPATH}/bin/buf generate --template protobuf/buf.gen.go-server.yaml
+	${GOPATH}/bin/buf generate --template protobuf/buf.gen.yaml
 push-tag:
 	cd protobuf && buf push --tag=${TAG}
