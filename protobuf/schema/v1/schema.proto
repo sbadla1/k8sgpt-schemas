@@ -17,6 +17,9 @@ message AnalyzeRequest {
   int32 max_concurrency = 7;
   string output = 8;
   repeated string filters = 9;
+  string cluster = 10;
+  string kubeconfig = 11;
+  string kubeconfig_path = 12;
 }
 
 message SensitiveData {
@@ -78,27 +81,10 @@ message RemoveConfigResponse {
 }
 
 message Cache {
-  oneof cache_type {
-    S3Cache s3_cache = 1;
-    AzureCache azure_cache = 2;
-    GCSCache gcs_cache = 3;
-  }
-}
-
-message S3Cache {
   string region = 1;
   string bucket_name = 2;
-}
-
-message AzureCache {
-  string storage_account = 1;
-  string container_name = 2;
-}
-
-message GCSCache {
-  string region = 1;
-  string bucket_name = 2;
-  string project_id = 3;
+  string storage_account = 3;
+  string container_name = 4;
 }
 
 message Trivy {
