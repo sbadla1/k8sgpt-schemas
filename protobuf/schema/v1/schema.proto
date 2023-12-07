@@ -116,5 +116,13 @@ service ServerService {
   }
   rpc AddConfig(AddConfigRequest) returns (AddConfigResponse) {}
   rpc RemoveConfig(RemoveConfigRequest) returns (RemoveConfigResponse) {}
-  rpc ListIntegrations(ListIntegrationsRequest) returns (ListIntegrationsResponse) {}
+  rpc ListIntegrations(ListIntegrationsRequest) returns (ListIntegrationsResponse) {
+     // option type is http
+     option (google.api.http) = {
+      // this is url, for RESTfull/JSON api and method
+      // this line means when a HTTP post request comes with "/v1/sayHello" call this rpc method over this service
+        get: "/v1/list"
+        body: "*"
+      };
+  }
 }
