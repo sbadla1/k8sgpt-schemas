@@ -122,7 +122,6 @@ service ServerService {
       // this is url, for RESTfull/JSON api and method
       // this line means when a HTTP post request comes with "/v1/sayHello" call this rpc method over this service
         get: "/v1/list"
-        body: "*"
       };
   }
 }
